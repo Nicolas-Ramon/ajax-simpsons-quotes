@@ -19,7 +19,8 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Simpson Quotes</h1>
-      <p>Reload for another quote!</p>
+      <!-- <p>Reload for another quote!</p> -->
+      <button id="bouton">Click to load new quote</button>
 
       <div class="content" id="simpson-quote">
 
@@ -32,6 +33,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
     integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
   <script>
+
     function fetchSimpsonJSON() {
 
       const url = "https://simpsons-quotes-api.herokuapp.com/quotes";
@@ -53,6 +55,10 @@
     }
 
     fetchSimpsonJSON()
+
+    document.getElementById("bouton").addEventListener("click", () => 
+      fetchSimpsonJSON());
+
   </script>
 </body>
 
